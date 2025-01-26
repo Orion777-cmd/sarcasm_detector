@@ -63,3 +63,9 @@ Start the sarcasm detection script to process inputs:
 ```bash
 python main.py
 ```
+
+## Snapshots of the model result
+
+![sarcastic result image](./app/static/sarcastic.png)
+
+![not sarcastic result image](./app/static/not-sarcastic.png)
