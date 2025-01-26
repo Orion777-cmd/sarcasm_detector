@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+        url('./bag.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.main-container {
+    width: 90%; 
+    max-width: 800px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1); /* Frosted glass effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+    align-items: center;
+}
+
+/* Textarea Styles */
+textarea {
+    width: 100%;
+    max-width: 400px;
+    height: 120px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    font-size: 1rem;
+    border: 2px solid #00ff99;
+    border-radius: 10px;
+    padding: 15px;
+    resize: none;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.6);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+textarea:focus {
+    transform: scale(1.02);
+    border-color: #00ccff;
+    box-shadow: 0 0 20px rgba(0, 204, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Button Styles */
+button {
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #00ff99, #00ccff);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 4px 15px rgba(0, 255, 153, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #00ccff, #00ff99);
+    box-shadow: 0 6px 20px rgba(0, 255, 153, 0.8);
+    transform: scale(1.08);
+}
+
+button:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 15px rgba(0, 255, 153, 0.8);
+}
+
+/* Add Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .main-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    textarea {
+        width: 100%;
+    }
+
+    button {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/styles.css" />
+    <title>Sarcasm Detector</title>
+    <style>
+      /* Inline CSS for result styling */
+      #result {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        display: none; /* Hide by default */
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease-in-out;
+      }
+
+      #result.sarcastic {
+        background: linear-gradient(45deg, #30475e, #223843);
+        box-shadow: 0 0 20px rgba(255, 118, 117, 0.8);
+      }
+
+      #result.not-sarcastic {
+        box-shadow: 0 0 20px rgba(85, 239, 196, 0.8);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <h1>Sarcasm Detector</h1>
+
+      <form class="form-container" id="sarcasmForm">
+        <textarea id="textInput" placeholder="Enter text here..."></textarea>
+        <div class="input-container">
+          <p id="result"></p>
+        </div>
+        <button type="button" onclick="detectSarcasm()">Predict</button>
+      </form>
+
+      <script>
+        // Get the textarea and result elements
+        const textInput = document.getElementById("textInput");
+        const resultElement = document.getElementById("result");
+
+        // Function to detect sarcasm
+        async function detectSarcasm() {
+          const text = textInput.value.trim(); // Trim whitespace
+          if (!text) {
+            resultElement.innerText = "Please enter some text!";
+            resultElement.style.display = "block";
+            resultElement.className = ""; // Reset classes
+            return;
+          }
+
+          try {
+            const response = await fetch("/predict", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ text }),
+            });
+
+            if (!response.ok) {
+              throw new Error("Failed to fetch sarcasm prediction");
+            }
+
+            const result = await response.json(); // Await JSON parsing
+
+            console.log("result =======>", result);
+            resultElement.innerText = result.sarcasm
+              ? "Sarcastic 😏"
+              : "Not Sarcastic 😊";
+            resultElement.style.display = "block"; // Show the result
+            resultElement.className = result.sarcasm
+              ? "sarcastic"
+              : "not-sarcastic"; // Add respective class for styling
+          } catch (error) {
+            console.error("Error detecting sarcasm:", error);
+            resultElement.innerText = "An error occurred. Please try again.";
+            resultElement.style.display = "block";
+            resultElement.className = ""; // Reset classes
+          }
+        }
+
+        // Add an event listener to clear the result on input
+        textInput.addEventListener("input", () => {
+          resultElement.style.display = "none"; // Hide the result
+          resultElement.innerText = ""; // Clear the result text
+          resultElement.className = ""; // Reset classes
+        });
+      </script>
+    </div>
+  </body>
+</html>
