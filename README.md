@@ -18,3 +18,46 @@ The fine-tuned BERT model achieved a validation accuracy of 0.8371 and an F1 sco
 ## Conclusion
 This project demonstrates the effectiveness of leveraging BERT for sarcasm detection on social media. Comprehensive preprocessing and data cleaning, combined with robust model fine-tuning, allowed us to achieve promising accuracy and F1 scores across diverse datasets. The insights and model developed here can be applied to other domains requiring nuanced text understanding, such as customer reviews and sentiment analysis.
 
+
+## Setup and Running the Sarcasm Detector
+
+Follow the steps below to set up and run the sarcasm detector on your local machine:
+
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+1. **Python 3.8+**: You can download it from [python.org](https://www.python.org/).
+2. **pip**: Python package manager (comes with Python installation).
+3. **virtualenv** (optional but recommended): To isolate the project's dependencies.
+
+### Setup and Running
+
+1. **Clone the Repository**  
+   Clone this repository to your local machine:
+   ```bash
+   git clone https://github.com/addisu-abitew/sarcasm_detector.git
+   cd sarcasm_detector
+
+2. **Set Up a Virtual Environment (Optional but recommended)**
+Create and activate a virtual environment:
+
+```bash
+python -m venv venv
+source venv/bin/activate       # On macOS/Linux
+venv\Scripts\activate          # On Windows
+```
+
+3. **Install Dependencies**
+Install the required Python libraries:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. **Run the Sarcasm Detector**
+Start the sarcasm detection script to process inputs:
+
+```bash
+python main.py
+```
