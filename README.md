@@ -36,7 +36,7 @@ Before you begin, ensure you have the following installed:
 1. **Clone the Repository**  
    Clone this repository to your local machine:
    ```bash
-   git clone https://github.com/addisu-abitew/sarcasm_detector.git
+   git clone https://github.com/Orion777-cmd/sarcasm_detector.git
    cd sarcasm_detector
 
 2. **Set Up a Virtual Environment (Optional but recommended)**
