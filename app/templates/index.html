@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="../static/styles.css" />
     <title>Sarcasm Detector</title>
     <style>
-      /* Inline CSS for result styling */
       #result {
         font-size: 1.2rem;
         font-weight: bold;
@@ -46,17 +45,15 @@
       </form>
 
       <script>
-        // Get the textarea and result elements
         const textInput = document.getElementById("textInput");
         const resultElement = document.getElementById("result");
 
-        // Function to detect sarcasm
         async function detectSarcasm() {
-          const text = textInput.value.trim(); // Trim whitespace
+          const text = textInput.value.trim(); 
           if (!text) {
             resultElement.innerText = "Please enter some text!";
             resultElement.style.display = "block";
-            resultElement.className = ""; // Reset classes
+            resultElement.className = ""; 
             return;
           }
 
@@ -73,7 +70,6 @@
 
             const result = await response.json(); // Await JSON parsing
 
-            console.log("result =======>", result);
             resultElement.innerText = result.sarcasm
               ? "Sarcastic 😏"
               : "Not Sarcastic 😊";
