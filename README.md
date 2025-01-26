@@ -1,5 +1,7 @@
 # Sarcasm Detection using BERT model - NLP Project
 
+![dashboard image](./app/static/demo.png)
+
 ## Objective
 The primary objective of this project is to develop a machine learning model capable of detecting sarcasm in textual data, specifically tweets. Sarcasm detection is a crucial task for enhancing the performance of sentiment analysis systems, enabling better understanding of social media dynamics, and improving human-computer interactions.
 
