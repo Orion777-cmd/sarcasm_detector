@@ -68,4 +68,4 @@ python main.py
 
 ![sarcastic result image](./app/static/sarcastic.png)
 
-![not sarcastic result image](./app/static/not-sarcastic.png)
+![non sarcastic result image](./app/static/not-sarcastic.png)

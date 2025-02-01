@@ -17,7 +17,7 @@
         max-width: 400px;
         background: rgba(0, 0, 0, 0.6);
         color: #fff;
-        display: none; /* Hide by default */
+        display: none; 
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
         transition: all 0.3s ease-in-out;
       }
@@ -68,28 +68,27 @@
               throw new Error("Failed to fetch sarcasm prediction");
             }
 
-            const result = await response.json(); // Await JSON parsing
+            const result = await response.json(); 
 
             resultElement.innerText = result.sarcasm
               ? "Sarcastic 😏"
               : "Not Sarcastic 😊";
-            resultElement.style.display = "block"; // Show the result
+            resultElement.style.display = "block"; 
             resultElement.className = result.sarcasm
               ? "sarcastic"
-              : "not-sarcastic"; // Add respective class for styling
+              : "not-sarcastic";
           } catch (error) {
             console.error("Error detecting sarcasm:", error);
             resultElement.innerText = "An error occurred. Please try again.";
             resultElement.style.display = "block";
-            resultElement.className = ""; // Reset classes
+            resultElement.className = ""; 
           }
         }
 
-        // Add an event listener to clear the result on input
         textInput.addEventListener("input", () => {
-          resultElement.style.display = "none"; // Hide the result
-          resultElement.innerText = ""; // Clear the result text
-          resultElement.className = ""; // Reset classes
+          resultElement.style.display = "none"; 
+          resultElement.innerText = "";
+          resultElement.className = ""; 
         });
       </script>
     </div>
